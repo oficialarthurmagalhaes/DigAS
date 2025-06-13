@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+    <title>Twitter Clone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Scripts -->
+    <script type="text/JavaScript" src="js/script.js"></script>
+    <script>
+        window.addEventListener("load", criarHeader);
+        console.log(document.getElementById("header"));
+        window.addEventListener("load", criarFooter);
+        console.log(document.getElementById("footer"));
+    </script>
 </head>
+
 <body>
-    
+    <header>
+        <!-- Cabeçalho com menu ou título -->
+        <div id="header"></div>
+    </header>
+
+    <main class="container">
+        <!-- Feed de Tweets -->
+        <div class="feed">
+            <!-- Criar novo tweet -->
+            <div class="novo-tweet">
+                <textarea id="tweet-input" placeholder="O que houve?" rows="3"></textarea>
+                <button id="tweet-button">Publicar</button>
+            </div>
+
+            <!-- Área onde os tweets aparecerão -->
+            <div id="tweets-container"></div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Rodapé com nome e link-->
+         <div class="footer" id="footer"></div>
+    </footer>
 </body>
+
 </html>
