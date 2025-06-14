@@ -4,34 +4,9 @@
 function criarHeader() {
     console.log("A função está sendo chamada!");
 
-    const headerHTML = `
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                  <img src="/assets/img/logo_DigAS_semfundo.png" alt="Logo digAS" width="auto" height="45px">
-                  DigAS
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                      <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="index.html">Início</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="contato.html">Contato</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="sobre.html">Sobre</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-  `;
-document.getElementById("header").innerHTML = headerHTML;
+    const headerHTML =` 
+        `;
+    document.getElementById("header").innerHTML = headerHTML;
 
 
     document.getElementById("header").innerHTML = headerHTML;
@@ -102,3 +77,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Mostrar botão ao rolar para baixo
+  window.addEventListener("scroll", function () {
+    const botao = document.querySelector(".btn-topo");
+    if (window.scrollY > 300) {
+      botao.style.display = "block";
+    } else {
+      botao.style.display = "none";
+    }
+  });
+
+  // Rolar suavemente ao topo
+  function voltarAoTopo() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }

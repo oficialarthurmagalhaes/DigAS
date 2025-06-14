@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,35 @@
 <body>
     <header>
         <!-- Cabeçalho com menu ou título -->
-        <div class="header" id="header"></div>
+        <!-- <div class="header" id="header"></div> -->
+         <header class="header">
+            <div class="nav">
+                <a href="#" class="logo">
+                    <img src="/assets/img/logo_DigAS_semfundo.png" alt="Logo DigAS" height="40" />
+                    <span>DigAS</span>
+                </a>
+
+                <nav class="links">
+                    <a href="#" class="link ativo">Contato</a>
+                    <a href="#" class="link">Sobre</a>
+                    
+                    <form class="busca">
+                        <input type="text" placeholder="Buscar..." />
+                        <button type="submit">Buscar</button>
+                    </form>
+                    <div class="menu">
+                        <button class="link">•••</button>
+                        <ul class="submenu">
+                            <li><a href="#">Ação</a></li>
+                            <li><a href="#">Outra ação</a></li>
+                            <li><hr /></li>
+                            <li><a href="#">Mais alguma coisa</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+            </div>
+        </header>
     </header>
 
     <main class="container">
@@ -42,6 +70,8 @@
             <div id="tweets-container"></div>
         </div>
     </main>
+
+    <button class="btn-topo" onclick="voltarAoTopo()">↑</button>
 
     <footer>
         <!-- Rodapé com nome e link-->
