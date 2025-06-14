@@ -171,14 +171,13 @@
   }
 }
 
-
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 135px; /* Ajuste conforme a altura real do seu header */
+    padding-top: 85px; /* Ajuste conforme a altura real do seu header */
   }
   
   .feed {
@@ -191,7 +190,7 @@
   }
   
   .novo-tweet {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   
   .novo-tweet textarea {
@@ -230,6 +229,7 @@
   .tweet-header img {
     border-radius: 50%;
     margin-right: 10px;
+    height: 55px;
   }
   
   .tweet-info {

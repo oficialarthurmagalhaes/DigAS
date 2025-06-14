@@ -5,6 +5,35 @@ function criarHeader() {
     console.log("A função está sendo chamada!");
 
     const headerHTML =` 
+        <header class="header">
+            <div class="nav">
+                <a href="index.html" class="logo">
+                    <img src="/assets/img/logo_DigAS_semfundo.png" alt="Logo DigAS" height="40" />
+                    <span>DigAS</span>
+                </a>
+
+                <nav class="links">
+                    <a href="contato.html" class="link ativo">Contato</a>
+                    <a href="sobre.html" class="link">Sobre</a>
+                    
+                    <form class="busca">
+                        <input type="text" placeholder="Buscar..." />
+                        <button type="submit">Buscar</button>
+                    </form>
+                    <div class="menu">
+                        <button class="link">•••</button>
+                        <ul class="submenu">
+                            <li><a href="#">Ação</a></li>
+                            <li><a href="#">Outra ação</a></li>
+                            <li><hr /></li>
+                            <li><a href="#">Mais alguma coisa</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+            </div>
+        </header>
+    </header>
         `;
     document.getElementById("header").innerHTML = headerHTML;
 
@@ -40,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         tweetDiv.innerHTML = `
           <div class="tweet-header">
-              <img src="/assets/img/IMG_20250112_163915.jpg" alt="IMG-20250112-163915" border="0" height="55px">
+              <img src="/assets/img/IMG_20250112_163915.jpg" alt="IMG-20250112-163915"">
               <div class="tweet-info">
                   <strong>Arthur Magalhães</strong>
                   <span>@magaltotal</span>
@@ -57,7 +86,7 @@ window.addEventListener("DOMContentLoaded", () => {
         tweetsContainer.insertBefore(tweetDiv, tweetsContainer.firstChild);
     }
 
-    // Evento de clique no botão "Tweetar"
+    // Evento de clique no botão "Publicar"
     tweetButton.addEventListener('click', () => {
         const tweetText = tweetInput.value.trim();
 
