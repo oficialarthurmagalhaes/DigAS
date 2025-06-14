@@ -6,10 +6,13 @@
         O UTF-8 é o padrão na América Latina -->
         <title>Cadastrados</title> <!--Título da página-->
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
         <script type="text/JavaScript" src="js/script.js"></script>
         <script>
             window.addEventListener("load", criarHeader);
             console.log(document.getElementById("header"));
+            window.addEventListener("load", criarFooter);
+            console.log(document.getElementById("footer"));
         </script>
     </head>
     <body> 
@@ -20,8 +23,9 @@
         <main>   
             <!-- todo o conteúdo, conteúdo principal-->
         </main>
-        <footer> 
-            <!-- Rodapé-->
-        </footer>
+    <footer>
+        <!-- Rodapé com nome e link-->
+         <div class="footer" id="footer"></div>
+    </footer>
     </body>
 </html>

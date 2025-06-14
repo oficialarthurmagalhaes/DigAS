@@ -31,6 +31,8 @@ function criarHeader() {
           </div>
       </nav>
   `;
+document.getElementById("header").innerHTML = headerHTML;
+
 
     document.getElementById("header").innerHTML = headerHTML;
 }
@@ -63,7 +65,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         tweetDiv.innerHTML = `
           <div class="tweet-header">
-              <img src="https://i.ibb.co/zhLnPzR7/IMG-20250112-163915.jpg" alt="IMG-20250112-163915" border="0" height="55px">
+              <img src="/assets/img/IMG_20250112_163915.jpg" alt="IMG-20250112-163915" border="0" height="55px">
               <div class="tweet-info">
                   <strong>Arthur Magalhães</strong>
                   <span>@magaltotal</span>
