@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+    font-family: "Inter", sans-serif;
   }
   
   body {
@@ -14,8 +15,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #f0f0f0; /* Cor de fundo para evitar sobreposição transparente */
-    padding: 10px;
+    background-color: #f7f9fa; /* Cor de fundo para evitar sobreposição transparente */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
     z-index: 1000; /* Ficar acima dos outros elementos */
   }
@@ -26,7 +26,7 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 160px; /* Ajuste conforme a altura real do seu header */
+    padding-top: 135px; /* Ajuste conforme a altura real do seu header */
   }
   
   .feed {

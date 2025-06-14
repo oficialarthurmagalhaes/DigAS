@@ -41,7 +41,7 @@ function criarFooter() {
 
     const FooterHTML = `
         <br>
-        <p>Equipe: Arthur Magalhães e Sérgio Henrique</p>
+        <p>Equipe: Arthur Magalhães, Sérgio Henrique, Eduardo Vasconcelos e Leonardo Botelho</p>
         <a href="">Saiba Mais</a>
     `;
 
