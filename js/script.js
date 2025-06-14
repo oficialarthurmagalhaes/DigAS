@@ -4,34 +4,38 @@
 function criarHeader() {
     console.log("A função está sendo chamada!");
 
-    const headerHTML = `
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                  <img src="/assets/img/logo_DigAS_semfundo.png" alt="Logo digAS" width="auto" height="45px">
-                  DigAS
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                      <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="index.html">Início</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="contato.html">Contato</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="sobre.html">Sobre</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-  `;
-document.getElementById("header").innerHTML = headerHTML;
+    const headerHTML =` 
+        <header class="header">
+            <div class="nav">
+                <a href="index.html" class="logo">
+                    <img src="/assets/img/logo_DigAS_semfundo.png" alt="Logo DigAS" height="40" />
+                    <span>DigAS</span>
+                </a>
+
+                <nav class="links">
+                    <a href="contato.html" class="link ativo">Contato</a>
+                    <a href="sobre.html" class="link">Sobre</a>
+                    
+                    <form class="busca">
+                        <input type="text" placeholder="Buscar..." />
+                        <button type="submit">Buscar</button>
+                    </form>
+                    <div class="menu">
+                        <button class="link">•••</button>
+                        <ul class="submenu">
+                            <li><a href="#">Ação</a></li>
+                            <li><a href="#">Outra ação</a></li>
+                            <li><hr /></li>
+                            <li><a href="#">Mais alguma coisa</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+            </div>
+        </header>
+    </header>
+        `;
+    document.getElementById("header").innerHTML = headerHTML;
 
 
     document.getElementById("header").innerHTML = headerHTML;
@@ -65,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         tweetDiv.innerHTML = `
           <div class="tweet-header">
-              <img src="/assets/img/IMG_20250112_163915.jpg" alt="IMG-20250112-163915" border="0" height="55px">
+              <img src="/assets/img/IMG_20250112_163915.jpg" alt="IMG-20250112-163915"">
               <div class="tweet-info">
                   <strong>Arthur Magalhães</strong>
                   <span>@magaltotal</span>
@@ -82,7 +86,7 @@ window.addEventListener("DOMContentLoaded", () => {
         tweetsContainer.insertBefore(tweetDiv, tweetsContainer.firstChild);
     }
 
-    // Evento de clique no botão "Tweetar"
+    // Evento de clique no botão "Publicar"
     tweetButton.addEventListener('click', () => {
         const tweetText = tweetInput.value.trim();
 
@@ -102,3 +106,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Mostrar botão ao rolar para baixo
+  window.addEventListener("scroll", function () {
+    const botao = document.querySelector(".btn-topo");
+    if (window.scrollY > 300) {
+      botao.style.display = "block";
+    } else {
+      botao.style.display = "none";
+    }
+  });
+
+  // Rolar suavemente ao topo
+  function voltarAoTopo() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
