@@ -75,7 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         tweetDiv.innerHTML = `
           <div class="tweet-header">
-              <img src="/assets/img/fotoPerfil_teste.jpg" alt="IMG-20250112-163915"">
+              <img src="/assets/img/hero/fotoPerfil_teste.jpg" alt="IMG-20250112-163915"">
               <div class="tweet-info">
                   <strong>Arthur Magalhães</strong>
                   <span>@magaltotal</span>
