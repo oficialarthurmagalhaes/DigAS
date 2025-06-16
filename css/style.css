@@ -447,6 +447,7 @@
   .contato-container-unico img {
       padding: 10px;
       max-height: 250px;
+      border-radius: 15px;
   }
   /* Estilos para os botões de contato */
   .contato-container-unico-botao {
@@ -538,6 +539,35 @@
       color: #0077b5;
       font-size: 15px;
       font-weight: 500;
+  }
+
+  /*================
+    Estilos para a página sobre
+  =================*/
+  .container-visao-geral {
+    box-sizing: border-box;
+    width: 800px;
+  }
+  .container-visao-geral-sobre {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .container-visao-geral-sobre-titulo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 30px;
+    color:#000000;
+  }
+  .container-visao-geral-sobre-paragrafo {
+    padding-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    color:#000000;    
   }
 
   /*===========================================================
