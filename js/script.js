@@ -50,8 +50,8 @@ function criarFooter() {
     // Monta o HTML do rodapé
     const FooterHTML = `
         <br>
-        <p>Equipe: Arthur Magalhães, Sérgio Henrique, Eduardo Vasconcelos e Leonardo Botelho</p>
-        <a href="">Saiba Mais</a>
+        <p>AS ® 2025</p>
+        <a href="https://docs.google.com/document/d/1MQCXd3q-jdZDjXXAWY3i8GacN3UbDNyhw1ExE0k093E/edit?usp=sharing" target="_blank">Saiba Mais</a>
     `;
 
     // Insere o HTML do rodapé no elemento com id "footer"
