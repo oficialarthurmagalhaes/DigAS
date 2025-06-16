@@ -34,6 +34,22 @@ body {
   align-items: center;
 }
 
+.login-cadastro-container-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 2px;
+}
+.login-cadastro-container-logo img {
+  width: 50px;
+  height: 50px;
+}
+.login-cadastro-container-logo h1 {
+  font-size: 20px !important;
+}
+
 .login-cadastro-container form h1 {
   font-size: 28px;
   font-weight: 700;
@@ -106,7 +122,8 @@ body {
   align-items: center;
   text-decoration: none;
   color: #000;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 20px;
   gap: 10px;
 }
 
