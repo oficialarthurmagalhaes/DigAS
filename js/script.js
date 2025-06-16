@@ -10,8 +10,7 @@ function criarHeader() {
         <header class="header">
             <div class="nav">
                 <a href="index.html" class="logo">
-                    <img src="/assets/img/logo_DigAS_semfundo.png" alt="Logo DigAS" height="40" />
-                    <span>DigAS</span>
+                    <img src="/assets/img/logo_AS.png" alt="Logo DigAS" height="40" />
                 </a>
 
                 <nav class="links">
@@ -76,7 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         tweetDiv.innerHTML = `
           <div class="tweet-header">
-              <img src="/assets/img/IMG_20250112_163915.jpg" alt="IMG-20250112-163915"">
+              <img src="/assets/img/fotoPerfil_teste.jpg" alt="IMG-20250112-163915"">
               <div class="tweet-info">
                   <strong>Arthur Magalhães</strong>
                   <span>@magaltotal</span>
