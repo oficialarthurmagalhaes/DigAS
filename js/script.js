@@ -10,7 +10,7 @@ function criarHeader() {
         <header class="header">
             <div class="nav">
                 <a href="index.html" class="logo">
-                    <img src="/assets/img/logo_AS.png" alt="Logo DigAS" height="40" />
+                    <img src="/assets/img/logo/logo_AS.png" alt="Logo AS - Home" height="40" />
                 </a>
 
                 <nav class="links">
