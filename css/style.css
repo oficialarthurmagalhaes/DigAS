@@ -1,16 +1,85 @@
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    font-family: "Inter", sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: "Inter", Arial, sans-serif;
+}
   
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f9fa;
-  }
-  
-  /* Estrutura principal */
+body {
+  background-color: #f7f9fa;
+}
+
+/* Estilos exclusivos para a página de login */
+.login-cadastro-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  height: 400px;
+  width: 400px;
+}
+
+.login-cadastro-container form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-cadastro-container form h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.login-cadastro-container form a {
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #000;
+  width: 100%;
+  text-align: center;
+}
+
+.login-cadastro-container form a:hover {
+  color: #094368;
+}
+
+.login-cadastro-container input[type="email"],
+.login-cadastro-container input[type="password"],
+.login-cadastro-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.login-cadastro-container input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0b5481;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.login-cadastro-container input[type="submit"]:hover {
+  background-color: #094368;
+} 
+
+/* Estrutura principal */
 .header {
   position: fixed;
   top: 0;
@@ -120,7 +189,7 @@
 }
 
 .busca input {
-  padding: 10px 12px;
+  padding: 6px 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -129,7 +198,7 @@
   background-color: #0b5481;
   color: white;
   border: none;
-  padding: 10px 12px;
+  padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -171,131 +240,131 @@
   }
 }
 
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 85px; /* Ajuste conforme a altura real do seu header */
-  }
-  
-  .feed {
-    flex: 1;
-    padding: 20px;
-    max-width: 800px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .novo-tweet {
-    margin-bottom: 5px;
-  }
-  
-  .novo-tweet textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #e1e8ed;
-    border-radius: 10px;
-    font-size: 16px;
-    resize: none;
-  }
-  
-  .novo-tweet button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #0b5481;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  .novo-tweet button:hover {
-    background-color: #0b5481;
-  }
-  
-  .tweet {
-    border-bottom: 1px solid #e1e8ed;
-    padding: 20px 0;
-  }
-  
-  .tweet-header {
-    display: flex;
-    align-items: center;
-  }
-  
-  .tweet-header img {
-    border-radius: 50%;
-    margin-right: 10px;
-    height: 55px;
-  }
-  
-  .tweet-info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .tweet-info strong {
-    font-size: 16px;
-  }
-  
-  .tweet-info span {
-    font-size: 14px;
-    color: #657786;
-  }
-  
-  .tweet p {
-    margin-top: 10px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .tweet-footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-  }
-  
-  .tweet-footer button {
-    background: none;
-    border: none;
-    color: #0b5481;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .tweet-footer button:hover {
-    text-decoration: underline;
-  }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 85px; /* Ajuste conforme a altura real do seu header */
+}
 
-  .btn-topo {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+.feed {
+  flex: 1;
+  padding: 20px;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.novo-tweet {
+  margin-bottom: 5px;
+}
+
+.novo-tweet textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+}
+
+.novo-tweet button {
+  margin-top: 10px;
+  padding: 10px 20px;
   background-color: #0b5481;
   color: white;
   border: none;
-  padding: 12px 16px;
-  border-radius: 50%;
-  font-size: 18px;
+  border-radius: 20px;
   cursor: pointer;
-  display: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: background 0.3s;
-  }
+}
 
-  .btn-topo:hover {
+.novo-tweet button:hover {
   background-color: #094368;
-  }
+}
 
-  .footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    padding-bottom: 20px;
-  }
+.tweet {
+  border-bottom: 1px solid #e1e8ed;
+  padding: 20px 0;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-header img {
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 55px;
+}
+
+.tweet-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-info strong {
+  font-size: 16px;
+}
+
+.tweet-info span {
+  font-size: 14px;
+  color: #657786;
+}
+
+.tweet p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.tweet-footer button {
+  background: none;
+  border: none;
+  color: #0b5481;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tweet-footer button:hover {
+  text-decoration: underline;
+}
+
+.btn-topo {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background-color: #0b5481;
+color: white;
+border: none;
+padding: 12px 16px;
+border-radius: 50%;
+font-size: 18px;
+cursor: pointer;
+display: none;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+z-index: 1000;
+transition: background 0.3s;
+}
+
+.btn-topo:hover {
+background-color: #094368;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
