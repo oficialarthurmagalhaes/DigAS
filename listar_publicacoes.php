@@ -1,13 +1,22 @@
 <?php
 include("conexao.php");
 
-$sql = "SELECT * FROM publicacoes ORDER BY data DESC";
+$busca = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['busca'])) {
+    $busca = $conn->real_escape_string($_POST['busca']);
+}
+
+$filtro = $busca ? "WHERE conteudo LIKE '%$busca%' OR autor LIKE '%$busca%'" : "";
+
+$sql = "SELECT * FROM publicacoes $filtro ORDER BY data DESC";
 $res = $conn->query($sql);
+
 
 while ($row = $res->fetch_assoc()) {
     $post_id = $row['id'];
-    echo "<div style='margin-bottom: 20px; margin-top: 10px;'>";
+    echo "<div style='margin-bottom: 40px;'>";
     echo "<p><strong>{$row['autor']}</strong>: {$row['conteudo']}</p>";
+
     if (!empty($row['imagem'])) {
         echo "<img src='uploads/{$row['imagem']}' width='200'><br>";
     }
@@ -37,6 +46,7 @@ while ($row = $res->fetch_assoc()) {
     if (isset($_SESSION['nome']) && $_SESSION['nome'] === $row['autor']) {
         echo "<br><a href='excluir_publicacao.php?id={$post_id}'>Excluir</a>";
     }
+
     echo "</div><hr>";
 }
 ?>
