@@ -36,13 +36,18 @@ if (!isset($_SESSION['email'])) {
     </header>
     <main class="container">
         <div class="feed">
-            <form action="publicar.php" method="POST" enctype="multipart/form-data">
-                <textarea name="conteudo" placeholder="O que houve?" rows="3" required></textarea><br><input type="file" name="imagem">
+            <form action="publicar.php" method="POST" class="nova-publicacao" enctype="multipart/form-data">
+                <textarea name="conteudo" placeholder="O que houve?" rows="3" required></textarea><br>
                 <button type="submit">Publicar</button>
+                <label for="imagem">Imagem</label>
+                <input type="file" name="imagem" id="imagem" class="input-file">
+                <span id="nome-arquivo">Nenhum arquivo selecionado</span>       
+
             </form>
             <hr>
             <?php include("listar_publicacoes.php"); ?>
         </div>
+        <button class="btn-topo" onclick="voltarAoTopo()">↑</button>
     </main>
     <footer>
         <div class="footer" id="footer"></div>
