@@ -27,7 +27,7 @@ function criarHeader() {
                             <li><a href="#">Meu Perfil</a></li>
                             <li><a href="#">Publicações Salvas</a></li>
                             <li><hr /></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="logout.php">Logout</a></li>
                         </ul>
                     </div>
                 </nav>
