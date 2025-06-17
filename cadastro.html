@@ -17,17 +17,17 @@
 <body>
     <div class="login-cadastro-container">
         <div class="box">
-            <form>
+            <form action="cadastro.php" method="POST">
                 <div class="login-cadastro-container-logo">
                     <img src="/assets/img/logo/logo_AS.png" alt=""><br>
                 </div>
                 <h1>Cadastro</h1>
-                <input id="nomedeusuario" type="text" placeholder="Nome de Usuário" required>
-                <input id="email" type="email" placeholder="Email" required>
-                <input id="senha" type="password" placeholder="Senha" required>
-                <input id="confirmarsenha" type="password" placeholder="Confirmar Senha" required>
+                <input id="nomedeusuario" name="nome" type="text" placeholder="Nome de Usuário" required>
+                <input id="email" name="email" type="email" placeholder="Email" required>
+                <input id="senha" name="senha" type="password" placeholder="Senha" required>
+                <input id="confirmarsenha" name="confirmarsenha" type="password" placeholder="Confirmar Senha" required>
                 <input id="cadastrese" type="submit" value="Criar Conta">
-                <a href="">Fazer Login</a>
+                <a href="login.html">Fazer Login</a>
             </form>
         </div>
     </div>

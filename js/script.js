@@ -9,8 +9,8 @@ function criarHeader() {
     const headerHTML =` 
         <header class="header">
             <div class="nav">
-                <a href="index.html" class="logo">
-                    <img src="/assets/img/logo/logo_AS.png" alt="Logo AS - Home" height="40" />
+                <a href="index.php" class="logo">
+                    <img src="/assets/img/logo/icone_AS.svg" alt="Logo AS - Home" height="40" />
                 </a>
 
                 <nav class="links">
@@ -24,7 +24,7 @@ function criarHeader() {
                     <div class="menu">
                         <button class="link">•••</button>
                         <ul class="submenu">
-                            <li><a href="#">Meu Perfil</a></li>
+                            <li><a href="editar_perfil.html">Meu Perfil</a></li>
                             <li><a href="#">Publicações Salvas</a></li>
                             <li><hr /></li>
                             <li><a href="logout.php">Logout</a></li>
@@ -58,60 +58,60 @@ function criarFooter() {
     document.getElementById("footer").innerHTML = FooterHTML
 }
 
-// ==========================
-// Lógica dos Tweets
-// ==========================
+// // ==========================
+// // Lógica dos Tweets
+// // ==========================
 
-// Espera o DOM carregar para garantir que os elementos existam
-window.addEventListener("DOMContentLoaded", () => {
-    const tweetButton = document.getElementById('tweet-button');
-    const tweetInput = document.getElementById('tweet-input');
-    const tweetsContainer = document.getElementById('tweets-container');
+// // Espera o DOM carregar para garantir que os elementos existam
+// window.addEventListener("DOMContentLoaded", () => {
+//     const tweetButton = document.getElementById('tweet-button');
+//     const tweetInput = document.getElementById('tweet-input');
+//     const tweetsContainer = document.getElementById('tweets-container');
 
-    // Função para criar um novo tweet
-    function createTweet(tweetText) {
-        const tweetDiv = document.createElement('div');
-        tweetDiv.classList.add('tweet');
+//     // Função para criar um novo tweet
+//     function createTweet(tweetText) {
+//         const tweetDiv = document.createElement('div');
+//         tweetDiv.classList.add('tweet');
 
-        tweetDiv.innerHTML = `
-          <div class="tweet-header">
-              <img src="/assets/img/hero/fotoPerfil_teste.jpg" alt="IMG-20250112-163915"">
-              <div class="tweet-info">
-                  <strong>Arthur Magalhães</strong>
-                  <span>@magaltotal</span>
-              </div>
-          </div>
-          <p>${tweetText}</p>
-          <div class="tweet-footer">
-              <button>Curtir</button>
-              <button>Comentar</button>
-              <button>Compartilhar</button>
-          </div>
-      `;
-        // Adiciona o tweet no início da lista
-        tweetsContainer.insertBefore(tweetDiv, tweetsContainer.firstChild);
-    }
+//         tweetDiv.innerHTML = `
+//           <div class="tweet-header">
+//               <img src="/assets/img/hero/fotoPerfil_teste.jpg" alt="IMG-20250112-163915"">
+//               <div class="tweet-info">
+//                   <strong>Arthur Magalhães</strong>
+//                   <span>@magaltotal</span>
+//               </div>
+//           </div>
+//           <p>${tweetText}</p>
+//           <div class="tweet-footer">
+//               <button>Curtir</button>
+//               <button>Comentar</button>
+//               <button>Compartilhar</button>
+//           </div>
+//       `;
+//         // Adiciona o tweet no início da lista
+//         tweetsContainer.insertBefore(tweetDiv, tweetsContainer.firstChild);
+//     }
 
-    // Evento de clique no botão "Publicar" para criar tweet
-    tweetButton.addEventListener('click', () => {
-        const tweetText = tweetInput.value.trim();
+//     // Evento de clique no botão "Publicar" para criar tweet
+//     tweetButton.addEventListener('click', () => {
+//         const tweetText = tweetInput.value.trim();
 
-        if (tweetText) {
-            createTweet(tweetText);
-            tweetInput.value = '';
-        } else {
-            alert("Digite algo para tweetar!");
-        }
-    });
+//         if (tweetText) {
+//             createTweet(tweetText);
+//             tweetInput.value = '';
+//         } else {
+//             alert("Digite algo para tweetar!");
+//         }
+//     });
 
-    // Permite enviar tweet pressionando Enter (sem Shift)
-    tweetInput.addEventListener('keypress', (event) => {
-        if (event.key === 'Enter' && !event.shiftKey) {
-            event.preventDefault();
-            tweetButton.click();
-        }
-    });
-});
+//     // Permite enviar tweet pressionando Enter (sem Shift)
+//     tweetInput.addEventListener('keypress', (event) => {
+//         if (event.key === 'Enter' && !event.shiftKey) {
+//             event.preventDefault();
+//             tweetButton.click();
+//         }
+//     });
+// });
 
 // ==========================
 // Botão de voltar ao topo

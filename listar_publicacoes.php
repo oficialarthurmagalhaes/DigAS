@@ -6,7 +6,7 @@ $res = $conn->query($sql);
 
 while ($row = $res->fetch_assoc()) {
     $post_id = $row['id'];
-    echo "<div style='margin-bottom: 40px;'>";
+    echo "<div style='margin-bottom: 20px; margin-top: 10px;'>";
     echo "<p><strong>{$row['autor']}</strong>: {$row['conteudo']}</p>";
     if (!empty($row['imagem'])) {
         echo "<img src='uploads/{$row['imagem']}' width='200'><br>";
