@@ -306,6 +306,16 @@
       background-color: #094368;
     }
 
+    .nova-publicacao label {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0b5481;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     .publicacao {
       border-bottom: 1px solid #e1e8ed;
       padding: 20px 0;
@@ -367,270 +377,254 @@
   display: none;
 }
 
-.upload-label {
-  background-color: #0b5481;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.upload-label:hover {
-  background-color: #093d60;
-}
-
 #nome-arquivo {
   margin-left: 10px;
   font-style: italic;
   color: #555;
 }
+/*================
+    Estilos para a página de contato
+=================*/
+.contato {
+    box-sizing: border-box;
+}
+  
+.contato-escrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.contato-escrito-titulo1 {
+    padding-top: 48px;
+    font-weight: 400;
+    font-size: 20px;
+    color:#0b5481;
+}
 
-    /*================
-        Estilos para a página de contato
-    =================*/
-    .contato {
-        box-sizing: border-box;
-    }
-      
-    .contato-escrito {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+.contato-escrito-titulo2 {
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 30px;
+    max-width: 500px;
+    text-align: center;
+    color:#000000;
+}
 
-    .contato-escrito-titulo1 {
-        padding-top: 48px;
-        font-weight: 400;
-        font-size: 20px;
-        color:#0b5481;
-    }
+.contato-escrito-subtitulo {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    max-width: 500px;
+    text-align: center;
+    color:#000000;
+}
 
-    .contato-escrito-titulo2 {
-        padding-top: 10px;
-        font-weight: 700;
-        font-size: 30px;
-        max-width: 500px;
-        text-align: center;
-        color:#000000;
-    }
+.contato-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 48px;
+}
 
-    .contato-escrito-subtitulo {
-        padding-top: 10px;
-        font-weight: 400;
-        font-size: 16px;
-        max-width: 500px;
-        text-align: center;
-        color:#000000;
-    }
+.contato-container-unico {
+    text-align: center;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #eee;
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+}
 
-    .contato-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-bottom: 48px;
-    }
+.contato-container-unico:hover {
+    -webkit-box-shadow: 0px 3px 5px #00000017;
+    box-shadow: 0px 3px 5px #00000017;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
 
-    .contato-container-unico {
-        text-align: center;
-        padding: 25px;
-        background-color: #fff;
-        border-radius: 20px;
-        position: relative;
-        margin-top: 30px;
-        margin-left: 10px;
-        margin-right: 10px;
-        border: 1px solid #eee;
-        -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
-        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
-    }
+.contato-container-unico h4 {
+    
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 
-    .contato-container-unico:hover {
-        -webkit-box-shadow: 0px 3px 5px #00000017;
-        box-shadow: 0px 3px 5px #00000017;
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-    }
+.contato-container-unico p {
+    
+    font-weight: 400;
+    font-size: 14px;
+    color:#888;
+    line-height: 22px;
+    max-width: 200px;
+}
 
-    .contato-container-unico h4 {
-        
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 20px;
-    }
+.contato-container-unico img {
+    padding: 10px;
+    max-height: 250px;
+    border-radius: 15px;
+}
+/* Estilos para os botões de contato */
+.contato-container-unico-botao {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .contato-container-unico p {
-        
-        font-weight: 400;
-        font-size: 14px;
-        color:#888;
-        line-height: 22px;
-        max-width: 200px;
-    }
+/*Botão de contato do Lattes*/
+.contato-container-unico-botao-lattes {
+    background-color: #f7f9fa;
+    border-radius: 5px;
+    border: 1px solid #0b5481;
+}
+.contato-container-unico-botao-lattes:hover {
+    background-color: #fff;
+    color: #fff;
+}
+.contato-container-unico-botao-lattes-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    gap: 5px;
+}
+.contato-container-unico-botao-lattes-link img {
+    width: 50px;
+    height: 50px;
+}
+.contato-container-unico-botao-lattes-link p {
+    color: #0b5481;
+    font-size: 15px;
+    font-weight: 500;
+}
 
-    .contato-container-unico img {
-        padding: 10px;
-        max-height: 250px;
-        border-radius: 15px;
-    }
-    /* Estilos para os botões de contato */
-    .contato-container-unico-botao {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+/* Botão de contato do Github */
+.contato-container-unico-botao-github {
+    background-color: #000000;
+    border-radius: 5px;
+}
+.contato-container-unico-botao-github:hover {
+    background-color: #094368;  
+    color: #fff;
+}
+.contato-container-unico-botao-github-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    gap: 5px;
+}
+.contato-container-unico-botao-github-link img {
+    width: 50px;
+    height: 50px;
+}
+.contato-container-unico-botao-github-link p {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+/* Botão de contato do Linkedin */
+.contato-container-unico-botao-linkedin {
+    background-color: #f7f9fa;
+    border-radius: 5px;
+    border: 1px solid #0077b5;
+}
+.contato-container-unico-botao-linkedin:hover {
+    background-color: #fff;
+    color: #fff;
+}
+.contato-container-unico-botao-linkedin-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    gap: 5px;
+}
+.contato-container-unico-botao-linkedin-link img {
+    width: 50px;
+    height: 50px;
+}
+.contato-container-unico-botao-linkedin-link p {
+    color: #0077b5;
+    font-size: 15px;
+    font-weight: 500;
+}
 
-    /*Botão de contato do Lattes*/
-    .contato-container-unico-botao-lattes {
-        background-color: #f7f9fa;
-        border-radius: 5px;
-        border: 1px solid #0b5481;
-    }
-    .contato-container-unico-botao-lattes:hover {
-        background-color: #fff;
-        color: #fff;
-    }
-    .contato-container-unico-botao-lattes-link {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: #fff;
-        gap: 5px;
-    }
-    .contato-container-unico-botao-lattes-link img {
-        width: 50px;
-        height: 50px;
-    }
-    .contato-container-unico-botao-lattes-link p {
-        color: #0b5481;
-        font-size: 15px;
-        font-weight: 500;
-    }
+/*================
+  Estilos para a página sobre
+=================*/
+.container-visao-geral {
+  box-sizing: border-box;
+  width: 800px;
+}
+.container-visao-geral-sobre {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container-visao-geral-sobre-titulo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 700;
+  font-size: 30px;
+  color:#000000;
+}
+.container-visao-geral-sobre-paragrafo {
+  padding-top: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  color:#000000;    
+}
 
-    /* Botão de contato do Github */
-    .contato-container-unico-botao-github {
-        background-color: #000000;
-        border-radius: 5px;
-    }
-    .contato-container-unico-botao-github:hover {
-        background-color: #094368;  
-        color: #fff;
-    }
-    .contato-container-unico-botao-github-link {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: #fff;
-        gap: 5px;
-    }
-    .contato-container-unico-botao-github-link img {
-        width: 50px;
-        height: 50px;
-    }
-    .contato-container-unico-botao-github-link p {
-        color: #fff;
-        font-size: 15px;
-        font-weight: 500;
-    }
-    /* Botão de contato do Linkedin */
-    .contato-container-unico-botao-linkedin {
-        background-color: #f7f9fa;
-        border-radius: 5px;
-        border: 1px solid #0077b5;
-    }
-    .contato-container-unico-botao-linkedin:hover {
-        background-color: #fff;
-        color: #fff;
-    }
-    .contato-container-unico-botao-linkedin-link {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: #fff;
-        gap: 5px;
-    }
-    .contato-container-unico-botao-linkedin-link img {
-        width: 50px;
-        height: 50px;
-    }
-    .contato-container-unico-botao-linkedin-link p {
-        color: #0077b5;
-        font-size: 15px;
-        font-weight: 500;
-    }
+/*===========================================================
+  Estilos para o botão de voltar ao topo
+  ==========================================================*/
 
-    /*================
-      Estilos para a página sobre
-    =================*/
-    .container-visao-geral {
-      box-sizing: border-box;
-      width: 800px;
-    }
-    .container-visao-geral-sobre {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .container-visao-geral-sobre-titulo {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      font-weight: 700;
-      font-size: 30px;
-      color:#000000;
-    }
-    .container-visao-geral-sobre-paragrafo {
-      padding-top: 20px;
-      font-weight: 400;
-      font-size: 16px;
-      color:#000000;    
-    }
+.btn-topo {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background-color: #0b5481;
+color: white;
+border: none;
+padding: 12px 16px;
+border-radius: 50%;
+font-size: 18px;
+cursor: pointer;
+display: none;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+z-index: 1000;
+transition: background 0.3s;
+}
 
-    /*===========================================================
-      Estilos para o botão de voltar ao topo
-      ==========================================================*/
+.btn-topo:hover {
+background-color: #094368;
+}
 
-    .btn-topo {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #0b5481;
-    color: white;
-    border: none;
-    padding: 12px 16px;
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
-    display: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: background 0.3s;
-    }
-
-    .btn-topo:hover {
-    background-color: #094368;
-    }
-
-    /*===========================================================
-      Estilos para o footer
-      ==========================================================*/
-    .footer{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      gap: 10px;
-      padding-bottom: 20px;
-    }
+/*===========================================================
+  Estilos para o footer
+  ==========================================================*/
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
