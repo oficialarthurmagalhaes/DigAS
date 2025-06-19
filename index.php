@@ -20,7 +20,7 @@ if (!isset($_SESSION['email'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Script para carregar cabeçalho e rodapé em todas as páginas -->
     <script type="text/JavaScript" src="js/script.js"></script>
     <script>
@@ -39,8 +39,10 @@ if (!isset($_SESSION['email'])) {
             <form action="publicar.php" method="POST" class="nova-publicacao" enctype="multipart/form-data">
                 <textarea name="conteudo" placeholder="O que houve?" rows="3" required></textarea><br>
                 <button type="submit">Publicar</button>
-                <label for="imagem">Imagem</label>
-                <input type="file" name="imagem" id="imagem" class="input-file">
+                <label for="upload" class="upload-btn">
+                    <i class="fa-regular fa-image" style="color: #ffffff;"></i>
+                    <input type="file" name="imagem" id="upload" class="input-file" style="display: none;">
+                </label>
                 <span id="nome-arquivo">Nenhum arquivo selecionado</span>       
 
             </form>

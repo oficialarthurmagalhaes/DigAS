@@ -319,6 +319,17 @@
       cursor: pointer;
     }
 
+    .upload-btn {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
     .publicacao {
       border-bottom: 1px solid #e1e8ed;
       padding: 20px 0;
