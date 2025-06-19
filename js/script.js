@@ -24,14 +24,13 @@ function criarHeader() {
                     <div class="menu">
                         <button class="link">•••</button>
                         <ul class="submenu">
-                            <li><a href="editar_perfil.html">Meu Perfil</a></li>
+                            <li><a href="editar_perfil.html">Editar Perfil</a></li>
                             <li><a href="#">Publicações Salvas</a></li>
                             <li><hr /></li>
                             <li><a href="logout.php">Logout</a></li>
                         </ul>
                     </div>
                 </nav>
-                
             </div>
         </header>`;
     // Insere o HTML do cabeçalho no elemento com id "header"

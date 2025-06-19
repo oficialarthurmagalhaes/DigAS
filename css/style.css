@@ -15,7 +15,6 @@
       ==========================================================*/ 
     .login-cadastro-container {
       height: 100vh;
-      width: 100vw;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -144,6 +143,7 @@
       transition: background 0.2s;
       background: transparent;
       cursor: pointer;
+      gap: 10px;
     }
 
     .link:hover {
@@ -156,48 +156,53 @@
     }
 
     /* Dropdown */
-    .menu {
-      position: relative;
-    }
+.menu {
+  position: relative;
+}
 
-    .submenu {
-      display: none;
-      position: absolute;
-      top: 35px;
-      left: 0;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      list-style: none;
-      padding: 10px 0;
-      min-width: 160px;
-    }
+.submenu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  min-width: 160px;
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
-    .menu:hover .submenu {
-      display: block;
-    }
+.menu:hover .submenu,
+.submenu:hover {
+  opacity: 1;
+  visibility: visible;
+}
 
-    .submenu li {
-      padding: 0;
-    }
+.submenu li {
+  padding: 0;
+}
 
-    .submenu a {
-      display: block;
-      padding: 10px 15px;
-      text-decoration: none;
-      color: #333;
-      transition: background 0.2s;
-    }
+.submenu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+}
 
-    .submenu a:hover {
-      background-color: #f0f0f0;
-    }
+.submenu a:hover {
+  background-color: #f0f0f0;
+}
 
-    .submenu hr {
-      margin: 5px 0;
-      border: none;
-      border-top: 1px solid #ddd;
-    }
+.submenu hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
 
     /* Busca */
     .busca {
@@ -229,18 +234,16 @@
     @media (max-width: 768px) {
       .nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .links {
-        margin-top: 10px;
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
       }
 
       .busca {
         width: 100%;
-        margin-top: 10px;
       }
 
       .busca input {
