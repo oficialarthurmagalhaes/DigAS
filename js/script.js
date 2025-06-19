@@ -10,7 +10,7 @@ function criarHeader() {
         <header class="header">
             <div class="nav">
                 <a href="index.php" class="logo">
-                    <img src="/assets/img/logo/icone_AS.svg" alt="Logo AS - Home" height="40" />
+                    <img src="assets/img/logo/logo_AS.png"/>
                 </a>
 
                 <nav class="links">
@@ -33,9 +33,7 @@ function criarHeader() {
                 </nav>
                 
             </div>
-        </header>
-    </header>
-        `;
+        </header>`;
     // Insere o HTML do cabeçalho no elemento com id "header"
     document.getElementById("header").innerHTML = headerHTML;
 }
