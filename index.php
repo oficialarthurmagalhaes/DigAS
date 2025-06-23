@@ -14,9 +14,9 @@ if (!isset($_SESSION['email'])) {
     <link rel="icon" type="image/svg" href="assets/img/logo/icone_AS.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Estilos -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <!-- Importa o CSS-->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Importa a fonte Inter do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -37,14 +37,15 @@ if (!isset($_SESSION['email'])) {
     <main class="container">
         <div class="feed">
             <form action="publicar.php" method="POST" class="nova-publicacao" enctype="multipart/form-data">
-                <textarea name="conteudo" placeholder="O que houve?" rows="3" required></textarea><br>
-                <button type="submit">Publicar</button>
-                <label for="upload" class="upload-btn">
-                    <i class="fa-regular fa-image" style="color: #ffffff;"></i>
-                    <input type="file" name="imagem" id="upload" class="input-file" style="display: none;">
-                </label>
-                <span id="nome-arquivo">Nenhum arquivo selecionado</span>       
-
+                <textarea name="conteudo" placeholder="O que houve?" rows="3" required></textarea>
+                <div class="nova-publicacao-botoes">
+                    <button type="submit">Publicar</button>
+                    <label for="upload" class="nova-publicacao-botoes-upload-btn">
+                        <i class="fa-regular fa-image" style="color: #ffffff;"></i>
+                        <input type="file" name="imagem" id="upload" class="input-file" style="display: none;" accept=".jpg, .jpeg, .png, .gif, .mp4, .mov">
+                    </label>
+                    <span id="nome-arquivo">Nenhum arquivo selecionado</span>
+                </div>       
             </form>
             <hr>
             <?php include("listar_publicacoes.php"); ?>

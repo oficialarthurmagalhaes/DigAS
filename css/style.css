@@ -80,6 +80,7 @@
     .login-cadastro-container input[type="submit"] {
       width: 100%;
       padding: 10px;
+      border: none;
       border-radius: 5px;
       background-color: #0b5481;
       color: #fff;
@@ -204,185 +205,188 @@
   border-top: 1px solid #ddd;
 }
 
-    /* Busca */
-    .busca {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+/* Busca */
+.busca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .busca input {
-      padding: 6px 12px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+.busca input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-    .busca button {
-      background-color: #0b5481;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.busca button {
+  background-color: #0b5481;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .busca button:hover {
-      background-color: #094368;
-    }
+.busca button:hover {
+  background-color: #094368;
+}
 
-    /* Responsivo */
-    @media (max-width: 768px) {
-      .nav {
-        flex-direction: column;
-        align-items: center;
-      }
+.busca button svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  display: block;
+  margin: 0 auto;
+  pointer-events: none;
+}
+/* Responsivo */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .links {
-        flex-direction: row;
-        gap: 10px;
-      }
+  .links {
+    flex-direction: row;
+    gap: 10px;
+  }
 
-      .busca {
-        width: 100%;
-      }
+  .busca {
+    width: 100%;
+  }
 
-      .busca input {
-        flex: 1;
-        width: 100%;
-      }
+  .busca input {
+    flex: 1;
+    width: 100%;
+  }
 
-      .submenu {
-        position: static;
-        box-shadow: none;
-      }
+  .submenu {
+    position: static;
+    box-shadow: none;
+  }
 
-      .menu:hover .submenu {
-        display: block;
-      }
-    }
+  .menu:hover .submenu {
+    display: block;
+  }
+}
 
-    /*===========================================================
-      Estilos para o feed de publicações
-      ==========================================================*/
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 75px; /* Ajuste conforme a altura real do seu header */
-    }
+/*===========================================================
+  Estilos para o feed de publicações
+  ==========================================================*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 75px; /* Ajuste conforme a altura real do seu header */
+}
 
-    .feed {
-      flex: 1;
-      padding: 20px;
-      max-width: 800px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+.feed {
+  flex: 1;
+  padding: 20px;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .nova-publicacao {
-      margin-bottom: 5px;
-    }
+.nova-publicacao {
+  margin-bottom: 5px;
+}
 
-    .nova-publicacao textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #e1e8ed;
-      border-radius: 10px;
-      font-size: 16px;
-      resize: none;
-    }
+.nova-publicacao textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+}
 
-    .nova-publicacao button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #0b5481;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.nova-publicacao-botoes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-    .nova-publicacao button:hover {
-      background-color: #094368;
-    }
+.nova-publicacao-botoes button {
+  padding: 10px 20px;
+  background-color: #0b5481;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .nova-publicacao label {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #0b5481;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.nova-publicacao-botoes button:hover {
+  background-color: #094368;
+}
 
-    .upload-btn {
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 12px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 18px;
-    }
+.nova-publicacao-botoes-upload-btn {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 12px;
+  background: #0b5481;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 18px;
+}
 
-    .publicacao {
-      border-bottom: 1px solid #e1e8ed;
-      padding: 20px 0;
-    }
+.publicacao {
+  border-bottom: 1px solid #e1e8ed;
+  padding: 20px 0;
+}
 
-    .publicacao-header {
-      display: flex;
-      align-items: center;
-    }
+.publicacao-header {
+  display: flex;
+  align-items: center;
+}
 
-    .publicacao-header img {
-      border-radius: 50%;
-      margin-right: 10px;
-      height: 55px;
-    }
+.publicacao-header img {
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 55px;
+}
 
-    .publicacao-info {
-      display: flex;
-      flex-direction: column;
-    }
+.publicacao-info {
+  display: flex;
+  flex-direction: column;
+}
 
-    .publicacao-info strong {
-      font-size: 16px;
-    }
+.publicacao-info strong {
+  font-size: 16px;
+}
 
-    .publicacao-info span {
-      font-size: 14px;
-      color: #657786;
-    }
+.publicacao-info span {
+  font-size: 14px;
+  color: #657786;
+}
 
-    .publicacao p {
-      margin-top: 10px;
-      font-size: 16px;
-      line-height: 1.5;
-    }
+.publicacao p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-    .publicacao-footer {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-    }
+.publicacao-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
 
-    .publicacao-footer button {
-      background: none;
-      border: none;
-      color: #0b5481;
-      cursor: pointer;
-      font-size: 14px;
-    }
+.publicacao-footer button {
+  background: none;
+  border: none;
+  color: #0b5481;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-    .publicacao-footer button:hover {
-      text-decoration: underline;
-    }
+.publicacao-footer button:hover {
+  text-decoration: underline;
+}
 
 /*===========================================================
       Estilos para o botão de upload de arquivo
