@@ -40,9 +40,13 @@ if (!isset($_SESSION['email'])) {
                 <textarea name="conteudo" placeholder="O que houve?" rows="3" required></textarea>
                 <div class="nova-publicacao-botoes">
                     <button type="submit">Publicar</button>
-                    <label for="upload" class="nova-publicacao-botoes-upload-btn">
+                    <label for="upload-imagem" class="nova-publicacao-botoes-upload-btn">
                         <i class="fa-regular fa-image" style="color: #ffffff;"></i>
-                        <input type="file" name="imagem" id="upload" class="input-file" style="display: none;" accept=".jpg, .jpeg, .png, .gif, .mp4, .mov">
+                        <input type="file" name="imagem" id="upload-imagem" class="input-file" style="display: none;" accept=".jpg, .jpeg, .png, .gif, .mp4, .mov">
+                    </label>
+                    <label for="upload-arquivo" class="nova-publicacao-botoes-upload-btn">
+                        <i class="fa-regular fa-file" sty></i>
+                        <input type="file" name="arquivo" id="upload-arquivo" class="input-file" style="display: none;" accept=".pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .zip, .rar, .txt">
                     </label>
                 </div>       
             </form>
