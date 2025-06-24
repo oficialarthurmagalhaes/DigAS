@@ -13,6 +13,9 @@ CREATE TABLE IF NOT EXISTS publicacoes (
     conteudo TEXT NOT NULL,
     autor VARCHAR(100) NOT NULL,
     imagem VARCHAR(255),
+    arquivo VARCHAR(255) DEFAULT NULL,
+    imagem_nome_original VARCHAR(255) DEFAULT NULL,
+    arquivo_nome_original VARCHAR(255) DEFAULT NULL,
     data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
