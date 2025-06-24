@@ -353,6 +353,7 @@
 .publicacao-feed-imagem {
   height: 200px;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .publicacao-feed-comentarios {
@@ -381,6 +382,7 @@
   align-items: center;
   justify-content: flex-start;  
   gap: 15px;
+  margin-bottom: 10px;
 }
 .publicacao-feed-curtir {
     margin-top: 5px;
