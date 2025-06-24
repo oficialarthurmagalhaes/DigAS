@@ -353,6 +353,39 @@
     margin-top: 5px;
 }
 .publicacao-feed-curtir-botao {
+  display: flex;
+  background-color: #f7f9fa;
+  color: #000;
+  border: 1px solid #000;
+  padding: 3px 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  align-items: center;
+}
+.publicacao-feed-curtir-botao:active{
+  background-color: red;
+  color: #fff;
+}
+.publicacao-feed-curtir-botao img{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.publicacao-feed-comentar{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+.publicacao-feed-comentar-texto {
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+.publicacao-feed-comentar-botao {
   background-color: #0b5481;
   color: white;
   border: none;
@@ -360,9 +393,9 @@
   border-radius: 5px;
   cursor: pointer;
 }
-/*===========================================================
+/*========================================================
       Estilos para o botão de upload de arquivo
-      ==========================================================*/
+==========================================================*/
 .input-file {
   display: none;
 }

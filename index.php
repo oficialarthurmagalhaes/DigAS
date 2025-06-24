@@ -44,7 +44,6 @@ if (!isset($_SESSION['email'])) {
                         <i class="fa-regular fa-image" style="color: #ffffff;"></i>
                         <input type="file" name="imagem" id="upload" class="input-file" style="display: none;" accept=".jpg, .jpeg, .png, .gif, .mp4, .mov">
                     </label>
-                    <span id="nome-arquivo">Nenhum arquivo selecionado</span>
                 </div>       
             </form>
             <hr>

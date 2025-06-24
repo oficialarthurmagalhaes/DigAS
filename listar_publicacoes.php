@@ -26,11 +26,13 @@ while ($row = $res->fetch_assoc()) {
     $curtidas = $conn->query("SELECT COUNT(*) as total FROM curtidas WHERE publicacao_id = $post_id")->fetch_assoc()['total'];
     echo "<form class='publicacao-feed-curtir' action='curtir.php' method='POST'>";
     echo "  <input type='hidden' name='publicacao_id' value='$post_id'>";
-    echo "  <button class='publicacao-feed-curtir-botao' type='submit'>❤️ Curtir ($curtidas)</button>";
+    echo "  <button class='publicacao-feed-curtir-botao' type='submit' id='curtir'>
+                <img src='assets/img/hero/coracao.png'>Curtir ($curtidas)
+            </button>";    
     echo "</form>";
 
     // Comentários
-    echo "<div style='margin-top:10px; margin-left: 15px;'>";
+    echo "<div style='margin-left: 25px;'>";
     $comentarios = $conn->query("SELECT * FROM comentarios WHERE publicacao_id = $post_id ORDER BY data ASC");
     while ($coment = $comentarios->fetch_assoc()) {
         echo "<p><strong>{$coment['autor']}:</strong> {$coment['texto']}</p>";
@@ -38,10 +40,10 @@ while ($row = $res->fetch_assoc()) {
     echo "</div>";
 
     // Formulário de comentário
-    echo "<form action='comentar.php' method='POST'>";
-    echo "<input type='hidden' name='publicacao_id' value='$post_id'>";
-    echo "<input type='text' name='comentario' placeholder='Comente algo...' required>";
-    echo "<button type='submit'>Comentar</button>";
+    echo "<form class='publicacao-feed-comentar' action='comentar.php' method='POST'>";
+    echo "  <input type='hidden' name='publicacao_id' value='$post_id'>";
+    echo "  <input class='publicacao-feed-comentar-texto' type='text' name='comentario' placeholder='Comente algo...' required>";
+    echo "  <button class='publicacao-feed-comentar-botao' type='submit'>Comentar</button>";
     echo "</form>";
 
     if (isset($_SESSION['nome']) && $_SESSION['nome'] === $row['autor']) {
