@@ -15,7 +15,7 @@ $res = $conn->query($sql);
 while ($row = $res->fetch_assoc()) {
     $post_id = $row['id'];
     echo "<div class='publicacao-feed'>";
-    echo "  <p class='publicacao-feed-autor'>{$row['autor']}:</p>";
+    echo "  <p class='publicacao-feed-autor'>{$row['autor']}: <span class='publicacao-feed-data'>{$row['data']}</span></p>";;
     echo "  <p class='publicacao-feed-texto'>{$row['conteudo']}</p>";
     
     if (!empty($row['imagem'])) {
@@ -26,14 +26,20 @@ while ($row = $res->fetch_assoc()) {
     $curtidas = $conn->query("SELECT COUNT(*) as total FROM curtidas WHERE publicacao_id = $post_id")->fetch_assoc()['total'];
 
     // Comentários
-    echo "<div style='margin-left: 25px;'>";
+    
     $comentarios = $conn->query("SELECT * FROM comentarios WHERE publicacao_id = $post_id ORDER BY data ASC");
-    while ($coment = $comentarios->fetch_assoc()) {
-        echo "<p><strong>{$coment['autor']}:</strong> {$coment['texto']}</p>";
+    if ($comentarios->num_rows > 0){
+        echo "<div class='publicacao-feed-comentarios'>";
+        while ($coment = $comentarios->fetch_assoc()) {
+            echo "<p class='publicacao-feed-comentarios-autor'>{$coment['autor']}: <span class='publicacao-feed-comentarios-data'>{$row['data']}</span></p>";
+            echo "<p class='publicacao-feed-comentarios-texto'>{$coment['texto']}</p>";
     }
     echo "</div>";
+    }
+    
 
-    // Formulário de comentário
+    // Botão de curtidas e Formulário de comentário na publicação
+    
     echo "<div class='publicacao-feed-curtir-comentar'>";
     echo "  <form class='publicacao-feed-curtir' action='curtir.php' method='POST'>";
     echo "      <input type='hidden' name='publicacao_id' value='$post_id'>";

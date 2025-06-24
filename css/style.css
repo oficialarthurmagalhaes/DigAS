@@ -337,9 +337,14 @@
 
 .publicacao-feed {
   padding: 10px;
+  align-items: center;
 }
 .publicacao-feed-autor{
   font-weight: 600;
+}
+.publicacao-feed-data {
+  font-size: 12px;
+  color: #888;
 }
 .publicacao-feed-texto {
   font-size: 16px;
@@ -348,6 +353,27 @@
 .publicacao-feed-imagem {
   height: 200px;
   border-radius: 5px;
+}
+
+.publicacao-feed-comentarios {
+  margin-left: 25px;
+  padding: 5px;
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  background-color: #f7f9fa;
+}
+.publicacao-feed-comentarios-autor {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0b5481
+}
+.publicacao-feed-comentarios-data {
+  font-size: 12px;
+  color: #888;
+}
+.publicacao-feed-comentarios-texto {
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 .publicacao-feed-curtir-comentar{
   display: flex;
