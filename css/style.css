@@ -349,6 +349,13 @@
   height: 200px;
   border-radius: 5px;
 }
+.publicacao-feed-curtir-comentar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;  
+  gap: 15px;
+}
 .publicacao-feed-curtir {
     margin-top: 5px;
 }
@@ -367,10 +374,25 @@
   background-color: red;
   color: #fff;
 }
+@media (max-width: 468px) {
+  .publicacao-feed-curtir-botao p{
+    display: none;
+    margin: 0;
+  }
+  .publicacao-feed-curtir-botao img{
+  width: 15px;
+  height: 15px;
+  margin-right: 0px;
+}
+}
 .publicacao-feed-curtir-botao img{
   width: 15px;
   height: 15px;
   margin-right: 5px;
+}
+.publicacao-feed-curtir-botao p {
+  font-size: 13px;
+  font-weight: 400;
 }
 .publicacao-feed-comentar{
   display: flex;

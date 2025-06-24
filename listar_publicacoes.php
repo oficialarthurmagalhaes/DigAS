@@ -24,12 +24,6 @@ while ($row = $res->fetch_assoc()) {
 
     // Curtidas
     $curtidas = $conn->query("SELECT COUNT(*) as total FROM curtidas WHERE publicacao_id = $post_id")->fetch_assoc()['total'];
-    echo "<form class='publicacao-feed-curtir' action='curtir.php' method='POST'>";
-    echo "  <input type='hidden' name='publicacao_id' value='$post_id'>";
-    echo "  <button class='publicacao-feed-curtir-botao' type='submit' id='curtir'>
-                <img src='assets/img/hero/coracao.png'>Curtir ($curtidas)
-            </button>";    
-    echo "</form>";
 
     // Comentários
     echo "<div style='margin-left: 25px;'>";
@@ -40,11 +34,20 @@ while ($row = $res->fetch_assoc()) {
     echo "</div>";
 
     // Formulário de comentário
-    echo "<form class='publicacao-feed-comentar' action='comentar.php' method='POST'>";
-    echo "  <input type='hidden' name='publicacao_id' value='$post_id'>";
-    echo "  <input class='publicacao-feed-comentar-texto' type='text' name='comentario' placeholder='Comente algo...' required>";
-    echo "  <button class='publicacao-feed-comentar-botao' type='submit'>Comentar</button>";
-    echo "</form>";
+    echo "<div class='publicacao-feed-curtir-comentar'>";
+    echo "  <form class='publicacao-feed-curtir' action='curtir.php' method='POST'>";
+    echo "      <input type='hidden' name='publicacao_id' value='$post_id'>";
+    echo "      <button class='publicacao-feed-curtir-botao' type='submit' id='curtir'>
+                    <img src='assets/img/hero/coracao.png'>
+                    <p>Curtir ($curtidas)</p>
+                </button>";    
+    echo "  </form>";
+    echo "  <form class='publicacao-feed-comentar' action='comentar.php' method='POST'>";
+    echo "      <input type='hidden' name='publicacao_id' value='$post_id'>";
+    echo "      <input class='publicacao-feed-comentar-texto' type='text' name='comentario' placeholder='Comente algo...' required>";
+    echo "      <button class='publicacao-feed-comentar-botao' type='submit'>Comentar</button>";
+    echo "  </form>";
+    echo "</div>";
 
     if (isset($_SESSION['nome']) && $_SESSION['nome'] === $row['autor']) {
         echo "<br><a href='excluir_publicacao.php?id={$post_id}'>Excluir</a>";
