@@ -271,7 +271,7 @@
 }
 
 /*===========================================================
-  Estilos para o feed de publicações
+  Estilos para o campo de publicar e o feed de publicações
   ==========================================================*/
 .container {
   display: flex;
@@ -302,6 +302,7 @@
   border-radius: 10px;
   font-size: 16px;
   resize: none;
+  margin-bottom: 5px;
 }
 
 .nova-publicacao-botoes {
@@ -334,60 +335,31 @@
   font-size: 18px;
 }
 
-.publicacao {
-  border-bottom: 1px solid #e1e8ed;
-  padding: 20px 0;
+.publicacao-feed {
+  padding: 10px;
 }
-
-.publicacao-header {
-  display: flex;
-  align-items: center;
+.publicacao-feed-autor{
+  font-weight: 600;
 }
-
-.publicacao-header img {
-  border-radius: 50%;
-  margin-right: 10px;
-  height: 55px;
-}
-
-.publicacao-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.publicacao-info strong {
+.publicacao-feed-texto {
   font-size: 16px;
+  margin-bottom: 10px;
 }
-
-.publicacao-info span {
-  font-size: 14px;
-  color: #657786;
+.publicacao-feed-imagem {
+  height: 200px;
+  border-radius: 5px;
 }
-
-.publicacao p {
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 1.5;
+.publicacao-feed-curtir {
+    margin-top: 5px;
 }
-
-.publicacao-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.publicacao-footer button {
-  background: none;
+.publicacao-feed-curtir-botao {
+  background-color: #0b5481;
+  color: white;
   border: none;
-  color: #0b5481;
+  padding: 6px 12px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
 }
-
-.publicacao-footer button:hover {
-  text-decoration: underline;
-}
-
 /*===========================================================
       Estilos para o botão de upload de arquivo
       ==========================================================*/

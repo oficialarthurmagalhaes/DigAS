@@ -14,18 +14,19 @@ $res = $conn->query($sql);
 
 while ($row = $res->fetch_assoc()) {
     $post_id = $row['id'];
-    echo "<div style='margin-bottom: 40px;'>";
-    echo "<p><strong>{$row['autor']}</strong>: {$row['conteudo']}</p>";
-
+    echo "<div class='publicacao-feed'>";
+    echo "  <p class='publicacao-feed-autor'>{$row['autor']}:</p>";
+    echo "  <p class='publicacao-feed-texto'>{$row['conteudo']}</p>";
+    
     if (!empty($row['imagem'])) {
-        echo "<img src='uploads/{$row['imagem']}' width='200'><br>";
+        echo "<img class='publicacao-feed-imagem' src='uploads/{$row['imagem']}'><br>";
     }
 
     // Curtidas
     $curtidas = $conn->query("SELECT COUNT(*) as total FROM curtidas WHERE publicacao_id = $post_id")->fetch_assoc()['total'];
-    echo "<form action='curtir.php' method='POST' style='display:inline'>";
-    echo "<input type='hidden' name='publicacao_id' value='$post_id'>";
-    echo "<button type='submit'>❤️ Curtir ($curtidas)</button>";
+    echo "<form class='publicacao-feed-curtir' action='curtir.php' method='POST'>";
+    echo "  <input type='hidden' name='publicacao_id' value='$post_id'>";
+    echo "  <button class='publicacao-feed-curtir-botao' type='submit'>❤️ Curtir ($curtidas)</button>";
     echo "</form>";
 
     // Comentários
