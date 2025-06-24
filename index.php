@@ -24,6 +24,7 @@ if (!isset($_SESSION['email'])) {
     <!-- Script para carregar cabeçalho e rodapé em todas as páginas -->
     <script type="text/JavaScript" src="js/script.js"></script>
     <script>
+        var isAdmin = <?php echo (isset($_SESSION['email']) && $_SESSION['email'] === 'admin@as.com') ? 'true' : 'false'; ?>;
         window.addEventListener("load", criarHeader);
         console.log(document.getElementById("header"));
         window.addEventListener("load", criarFooter);

@@ -429,15 +429,15 @@
   color: #fff;
 }
 @media (max-width: 468px) {
+  .publicacao-feed-curtir-botao img{
+    width: 15px;
+    height: 15px;
+    margin-right: 0;
+  }
   .publicacao-feed-curtir-botao p{
     display: none;
     margin: 0;
   }
-  .publicacao-feed-curtir-botao img{
-  width: 15px;
-  height: 15px;
-  margin-right: 0px;
-}
 }
 .publicacao-feed-curtir-botao img{
   width: 15px;

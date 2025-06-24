@@ -4,6 +4,10 @@
 function criarHeader() {
     // Log para verificar se a função está sendo chamada
     console.log("A função do  cabeçalho está sendo chamada!");
+    let adminLink = '';
+    if (typeof isAdmin !== "undefined" && isAdmin) {
+      adminLink = `<a href="admin.php" class="link">Painel Admin</a>`;
+}
 
     // Monta o HTML do cabeçalho
     const headerHTML =` 
@@ -14,8 +18,10 @@ function criarHeader() {
                 </a>
 
                 <nav class="links">
-                    <a href="contato.html" class="link ativo">Contato</a>
-                    <a href="sobre.html" class="link">Sobre</a>
+                    <a href="index.php" class="link ativo">Início</a>
+                    <a href="contato.php" class="link">Contato</a>
+                    <a href="sobre.php" class="link">Sobre</a>
+                    ${adminLink}
                     
                     <form class="busca" action="index.php" method="POST">
                         <input type="text" placeholder="Buscar conteúdo ou autor..." id=busca name=busca value="" />
