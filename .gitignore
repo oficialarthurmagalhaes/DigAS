@@ -1,0 +1,12 @@
+# Arquivos enviados pelos usuários (mantém só a pasta e a proteção)
+uploads/*
+!uploads/.gitkeep
+!uploads/.htaccess
+
+# Configurações locais de editor
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
