@@ -1,10 +1,7 @@
 <?php
-session_start();
-include("conexao.php");
-
-if (!isset($_SESSION['email']) || $_SESSION['email'] !== 'admin@as.com') {
-    die("<div style='color:red; font-weight:bold; margin:40px;'>Acesso negado.</div>");
-}
+require_once("funcoes.php");
+require_once("conexao.php");
+exigir_admin();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -24,7 +21,7 @@ if (!isset($_SESSION['email']) || $_SESSION['email'] !== 'admin@as.com') {
     <script type="text/JavaScript" src="js/script.js"></script>
     <!-- Script para carregar cabeçalho e rodapé -->
     <script>
-        var isAdmin = <?php echo (isset($_SESSION['email']) && $_SESSION['email'] === 'admin@as.com') ? 'true' : 'false'; ?>;
+        var isAdmin = <?php echo eh_admin() ? 'true' : 'false'; ?>;
         window.addEventListener("load", criarHeader);
         window.addEventListener("load", criarFooter);
     </script>
@@ -82,9 +79,9 @@ if (!isset($_SESSION['email']) || $_SESSION['email'] !== 'admin@as.com') {
             <div class="admin-section-title">Usuários</div>
             <div class="admin-list">
                 <?php
-                $res = $conn->query("SELECT * FROM usuarios");
+                $res = $conn->query("SELECT nome, email FROM usuarios ORDER BY nome");
                 while ($row = $res->fetch_assoc()) {
-                    echo "<div class='admin-user'><span>{$row['nome']} <span style='color:#888;'>({$row['email']})</span></span></div>";
+                    echo "<div class='admin-user'><span>" . e($row['nome']) . " <span style='color:#888;'>(" . e($row['email']) . ")</span></span></div>";
                 }
                 ?>
             </div>
@@ -95,8 +92,11 @@ if (!isset($_SESSION['email']) || $_SESSION['email'] !== 'admin@as.com') {
                 $res = $conn->query("SELECT * FROM publicacoes ORDER BY data DESC");
                 while ($row = $res->fetch_assoc()) {
                     echo "<div class='admin-pub'>";
-                    echo "<span class='admin-pub-content'><strong>{$row['autor']}</strong>: " . htmlspecialchars($row['conteudo']) . "</span>";
-                    echo "<a class='admin-excluir' href='excluir_publicacao_admin.php?id={$row['id']}'>[Excluir]</a>";
+                    echo "<span class='admin-pub-content'><strong>" . e($row['autor']) . "</strong>: " . e($row['conteudo']) . "</span>";
+                    echo "<form action='excluir_publicacao_admin.php' method='POST' style='display:inline' onsubmit=\"return confirm('Excluir esta publicação?');\">"
+                       . csrf_campo()
+                       . "<input type='hidden' name='id' value='" . (int) $row['id'] . "'>"
+                       . "<button type='submit' class='admin-excluir' style='background:none;border:none;cursor:pointer'>[Excluir]</button></form>";
                     echo "</div>";
                 }
                 ?>

@@ -1,14 +1,19 @@
 <?php
-// inicia a sessão e faz a conexão com o banco de dados
-session_start();
-include("conexao.php");
+require_once("funcoes.php");
+require_once("conexao.php");
+exigir_login();
+exigir_post();
+validar_csrf();
 
-$publicacao_id = $_POST['publicacao_id']; // Recebe o ID da publicação do formulário de comentário
-$autor = $_SESSION['nome']; // Obtém o nome do usuário logado na sessão
-$texto = $_POST['comentario']; // Recebe os dados do formulário de comentário
+$publicacao_id = (int) ($_POST['publicacao_id'] ?? 0);
+$autor = $_SESSION['nome'];
+$texto = trim($_POST['comentario'] ?? '');
 
-//Inserção do comentário no banco de dados
-$sql = "INSERT INTO comentarios (publicacao_id, autor, texto) VALUES ('$publicacao_id', '$autor', '$texto')";
-$conn->query($sql);
+if ($publicacao_id > 0 && $texto !== '') {
+    // O SELECT garante que só é possível comentar em uma publicação que existe.
+    $stmt = $conn->prepare("INSERT INTO comentarios (publicacao_id, autor, texto) SELECT id, ?, ? FROM publicacoes WHERE id = ?");
+    $stmt->bind_param("ssi", $autor, $texto, $publicacao_id);
+    $stmt->execute();
+}
 
-header("Location: index.php"); // Redireciona para a página principal após o comentário ser adicionado
+header("Location: index.php");

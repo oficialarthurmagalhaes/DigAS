@@ -1,27 +1,29 @@
 <?php
-session_start();
-include("conexao.php");
+require_once("funcoes.php");
+require_once("conexao.php");
+exigir_login();
+exigir_post();
 
-if (!isset($_SESSION['email'])) {
-    header("Location: login.html");
-    exit();
-}
-
-$nome = $_POST['nome'];
-$nova_senha = $_POST['senha'];
+$nome = trim($_POST['nome'] ?? '');
+$nova_senha = $_POST['senha'] ?? '';
 $email = $_SESSION['email'];
 
-if (!empty($nova_senha)) {
-    $senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
-    $sql = "UPDATE usuarios SET nome='$nome', senha='$senha_hash' WHERE email='$email'";
-} else {
-    $sql = "UPDATE usuarios SET nome='$nome' WHERE email='$email'";
+if ($nome === '' || mb_strlen($nome) > 100) {
+    die("Informe um nome válido (até 100 caracteres).");
 }
 
-if ($conn->query($sql) === TRUE) {
-    $_SESSION['nome'] = $nome;
-    header("Location: index.php");
+if ($nova_senha !== '') {
+    if (strlen($nova_senha) < 6) {
+        die("A nova senha deve ter pelo menos 6 caracteres.");
+    }
+    $senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
+    $stmt = $conn->prepare("UPDATE usuarios SET nome = ?, senha = ? WHERE email = ?");
+    $stmt->bind_param("sss", $nome, $senha_hash, $email);
 } else {
-    echo "Erro ao atualizar perfil: " . $conn->error;
+    $stmt = $conn->prepare("UPDATE usuarios SET nome = ? WHERE email = ?");
+    $stmt->bind_param("ss", $nome, $email);
 }
-?>
+
+$stmt->execute();
+$_SESSION['nome'] = $nome;
+header("Location: index.php");

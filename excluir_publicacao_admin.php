@@ -1,12 +1,20 @@
 <?php
-session_start();
-include("conexao.php");
+require_once("funcoes.php");
+require_once("conexao.php");
+exigir_admin();
+exigir_post();
+validar_csrf();
 
-if ($_SESSION['email'] !== 'admin@as.com') {
-    die("Acesso negado.");
+$id = (int) ($_POST['id'] ?? 0);
+
+$stmt = $conn->prepare("SELECT id, imagem, arquivo FROM publicacoes WHERE id = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$publicacao = $stmt->get_result()->fetch_assoc();
+
+if ($publicacao) {
+    require_once("excluir_publicacao_comum.php");
+    excluir_publicacao($conn, $publicacao);
 }
 
-$id = $_GET['id'];
-$conn->query("DELETE FROM publicacoes WHERE id=$id");
 header("Location: admin.php");
-?>

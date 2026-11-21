@@ -1,9 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['email'])) {
-    header("Location: login.html");
-    exit();
-}
+require_once("funcoes.php");
+exigir_login();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -24,7 +21,7 @@ if (!isset($_SESSION['email'])) {
     <!-- Script para carregar cabeçalho e rodapé em todas as páginas -->
     <script type="text/JavaScript" src="js/script.js"></script>
     <script>
-        var isAdmin = <?php echo (isset($_SESSION['email']) && $_SESSION['email'] === 'admin@as.com') ? 'true' : 'false'; ?>;
+        var isAdmin = <?php echo eh_admin() ? 'true' : 'false'; ?>;
         window.addEventListener("load", criarHeader);
         console.log(document.getElementById("header"));
         window.addEventListener("load", criarFooter);
@@ -38,15 +35,16 @@ if (!isset($_SESSION['email'])) {
     <main class="container">
         <div class="feed">
             <form action="publicar.php" method="POST" class="nova-publicacao" enctype="multipart/form-data">
+                <?php echo csrf_campo(); ?>
                 <textarea name="conteudo" placeholder="O que houve?" rows="3" required></textarea>
                 <div class="nova-publicacao-botoes">
                     <button type="submit">Publicar</button>
                     <label for="upload-imagem" class="nova-publicacao-botoes-upload-btn">
                         <i class="fa-regular fa-image" style="color: #ffffff;"></i>
-                        <input type="file" name="imagem" id="upload-imagem" class="input-file" style="display: none;" accept=".jpg, .jpeg, .png, .gif, .mp4, .mov">
+                        <input type="file" name="imagem" id="upload-imagem" class="input-file" style="display: none;" accept=".jpg, .jpeg, .png, .gif, .webp, .mp4, .mov, .webm">
                     </label>
                     <label for="upload-arquivo" class="nova-publicacao-botoes-upload-btn">
-                        <i class="fa-regular fa-file" sty></i>
+                        <i class="fa-regular fa-file"></i>
                         <input type="file" name="arquivo" id="upload-arquivo" class="input-file" style="display: none;" accept=".pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .zip, .rar, .txt">
                     </label>
                 </div>       

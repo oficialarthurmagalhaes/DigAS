@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("funcoes.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@ session_start();
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <script>
-        var isAdmin = <?php echo (isset($_SESSION['email']) && $_SESSION['email'] === 'admin@as.com') ? 'true' : 'false'; ?>;
+        var isAdmin = <?php echo eh_admin() ? 'true' : 'false'; ?>;
     </script>
     <!-- Importa o JavaScript do header e footer-->
     <script type="text/JavaScript" src="js/script.js"></script>

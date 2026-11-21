@@ -1,18 +1,20 @@
 <?php
-// inicia a sessão e faz a conexão com o banco de dados
-session_start();
-include("conexao.php"); 
+require_once("funcoes.php");
+require_once("conexao.php");
+exigir_login();
+exigir_post();
+validar_csrf();
 
-$publicacao_id = $_POST['publicacao_id'];// Recebe o ID da publicação do formulário de curtida
-$email = $_SESSION['email'];// Obtém o email do usuário logado na sessão
+$publicacao_id = (int) ($_POST['publicacao_id'] ?? 0);
+$email = $_SESSION['email'];
 
-// Verificar se já curtiu
-$verifica = $conn->query("SELECT * FROM curtidas WHERE publicacao_id = $publicacao_id AND usuario_email = '$email'");
-// Se não curtiu, insere a curtida
-if ($verifica->num_rows === 0) {
-    // Inserção da curtida no banco de dados
-    $conn->query("INSERT INTO curtidas (publicacao_id, usuario_email) VALUES ($publicacao_id, '$email')");
+if ($publicacao_id > 0) {
+    // A chave UNIQUE (publicacao_id, usuario_email) impede curtida duplicada;
+    // INSERT IGNORE simplesmente não faz nada se o usuário já curtiu.
+    // O SELECT garante que só é possível curtir uma publicação que existe.
+    $stmt = $conn->prepare("INSERT IGNORE INTO curtidas (publicacao_id, usuario_email) SELECT id, ? FROM publicacoes WHERE id = ?");
+    $stmt->bind_param("si", $email, $publicacao_id);
+    $stmt->execute();
 }
 
-header("Location: index.php"); // Redireciona para a página principal após a curtida ser adicionada
-?>
+header("Location: index.php");

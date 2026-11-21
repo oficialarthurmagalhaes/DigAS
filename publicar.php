@@ -1,50 +1,27 @@
 <?php
-// Inicia a sessão para acessar variáveis de sessão
-session_start();
+require_once("funcoes.php");
+require_once("conexao.php");
+exigir_login();
+exigir_post();
+validar_csrf();
 
-// Inclui o arquivo de conexão com o banco de dados
-include("conexao.php");
+$conteudo = trim($_POST['conteudo'] ?? '');
+if ($conteudo === '') {
+    die("A publicação não pode estar vazia.");
+}
 
-// Recebe o conteúdo da publicação enviado pelo formulário
-$conteudo = $_POST['conteudo'];
-// Pega o nome do autor a partir da sessão
 $autor = $_SESSION['nome'];
+$email = $_SESSION['email'];
 
-// Inicializa as variáveis para armazenar os nomes dos arquivos (salvo e original)
-$imagem_nome = "";
-$imagem_nome_original = "";
-$arquivo_nome = "";
-$arquivo_nome_original = "";
+// Cada upload é validado (extensão, tipo real e tamanho) antes de ser salvo
+[$imagem_nome, $imagem_nome_original] = salvar_upload('imagem', TIPOS_MIDIA);
+[$arquivo_nome, $arquivo_nome_original] = salvar_upload('arquivo', TIPOS_ARQUIVO);
 
-// Verifica se um arquivo de imagem/vídeo foi enviado e se não houve erro no upload
-if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0) {
-    // Pega o nome original do arquivo enviado
-    $imagem_nome_original = $_FILES['imagem']['name'];
-    // Pega a extensão do arquivo enviado
-    $ext = strtolower(pathinfo($imagem_nome_original, PATHINFO_EXTENSION));
-    // Gera um nome único para o arquivo salvo
-    $imagem_nome = uniqid() . "." . $ext;
-    // Move o arquivo enviado para a pasta 'uploads'
-    move_uploaded_file($_FILES['imagem']['tmp_name'], "uploads/" . $imagem_nome);
-}
+$stmt = $conn->prepare(
+    "INSERT INTO publicacoes (conteudo, autor, usuario_email, imagem, imagem_nome_original, arquivo, arquivo_nome_original)
+     VALUES (?, ?, ?, ?, ?, ?, ?)"
+);
+$stmt->bind_param("sssssss", $conteudo, $autor, $email, $imagem_nome, $imagem_nome_original, $arquivo_nome, $arquivo_nome_original);
+$stmt->execute();
 
-// Verifica se um arquivo para download foi enviado e se não houve erro no upload
-if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] == 0) {
-    // Pega o nome original do arquivo enviado
-    $arquivo_nome_original = $_FILES['arquivo']['name'];
-    // Pega a extensão do arquivo enviado
-    $ext = strtolower(pathinfo($arquivo_nome_original, PATHINFO_EXTENSION));
-    // Gera um nome único para o arquivo salvo
-    $arquivo_nome = uniqid() . "." . $ext;
-    // Move o arquivo enviado para a pasta 'uploads'
-    move_uploaded_file($_FILES['arquivo']['tmp_name'], "uploads/" . $arquivo_nome);
-}
-
-// Insere a publicação no banco de dados, incluindo os nomes originais e salvos dos arquivos
-$sql = "INSERT INTO publicacoes (conteudo, autor, imagem, imagem_nome_original, arquivo, arquivo_nome_original) 
-        VALUES ('$conteudo', '$autor', '$imagem_nome', '$imagem_nome_original', '$arquivo_nome', '$arquivo_nome_original')";
-$conn->query($sql);
-
-// Redireciona o usuário de volta para a página inicial após a publicação
 header("Location: index.php");
-?>
